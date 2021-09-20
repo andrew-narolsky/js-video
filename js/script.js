@@ -53,7 +53,7 @@
 
 const FindVideos = function() {
 
-    this.init = () => {
+    this.init = function() {
         let $videos = document.querySelectorAll('.view-block-wrap');
         for (let i in $videos) {
             if ($videos.hasOwnProperty(i)) {
@@ -62,7 +62,7 @@ const FindVideos = function() {
         }
     }
 
-    this.setupVideo = ($video) => {
+    this.setupVideo = function($video) {
         let $link = $video.querySelector('.video__link');
         let $media = $video.querySelector('.video__media');
         let $button = $video.querySelector('.video__button');
@@ -77,14 +77,14 @@ const FindVideos = function() {
         $video.classList.add('video--enabled');
     }
 
-    this.parseMediaURL = ($media) => {
+    this.parseMediaURL = function($media) {
         let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
         let url = $media.src;
         let match = url.match(regexp);
         return match[1];
     }
 
-    this.createIframe = (id) => {
+    this.createIframe = function(id) {
         let $iframe = document.createElement('iframe');
         $iframe.setAttribute('allowfullscreen', '');
         $iframe.setAttribute('allow', 'autoplay');
@@ -93,7 +93,7 @@ const FindVideos = function() {
         return $iframe;
     }
 
-    this.generateURL = (id) => {
+    this.generateURL = function(id) {
         let query = '?rel=0&showinfo=0&autoplay=1';
         return 'https://www.youtube.com/embed/' + id + query;
     }
