@@ -2,8 +2,10 @@ const FindVideos = function() {
 
     this.init = () => {
         let $videos = document.querySelectorAll('.view-block-wrap');
-        for (let i = 0; i < $videos.length; i++) {
-            this.setupVideo($videos[i]);
+        for (let i in $videos) {
+            if ($videos.hasOwnProperty(i)) {
+                this.setupVideo($videos[i]);
+            }
         }
     }
 
