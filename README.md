@@ -2,5 +2,5 @@
 
 Init video
 ```
-
+(new FindVideos()).init();
 ```
