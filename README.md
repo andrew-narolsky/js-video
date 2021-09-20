@@ -1,0 +1,6 @@
+# JS video
+
+Init video
+```
+
+```
